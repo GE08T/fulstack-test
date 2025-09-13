@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 const app = express()
 
 let notes = [
@@ -28,7 +29,7 @@ const requestLogger = (request, response, next) => {
 }
 
 app.use(requestLogger)
-app.use(express.static('dist'))
+app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.json())
 
 // app.get('/', (request, response) => {
