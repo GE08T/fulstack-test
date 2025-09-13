@@ -2,5 +2,15 @@
   "version": 2, 
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api"}
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/$1"
+    }
   ]
 }
